@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer Money</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/table.css">
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
+    <link rel="stylesheet" href="front4.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&display=swap" rel="stylesheet">
+
+    <style type="text/css">
+      button{
+        transition: 1.5s;
+      }
+      button:hover{
+        background-color:dark;
+        color: white;
+      }
+    </style>
+</head>
+
+<body style="background-color: #212529;">
+<?php
+    include 'config.php';
+    $sql = "SELECT * FROM users";
+    $result = mysqli_query($conn,$sql);
+?>
+
+<nav id="navbar">
+        <div id="logo">
+            <img src="img/New folder/aj.png" alt="logo">
+        </div>
+        <ul>
+        <li class="item"><a href="index.php">Home</a></li>
+            <li class="item"><a href="create_user.php">Create User</a></li>
+            <li class="item"><a href="transaction_money.php">Transfer Money</a></li>
+            <li class="item"><a href="transaction_history.php">Transaction History</a></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <h1 class="primary">Transfer Your Money</h1>
+        <p>THE SPARK BANK</p>
+        <p> The 100% Safest Banking  </p>
+        
+        <!-- <button class="btn"> Order Now</button> -->
+    </section>
+   
+
+<div class="container">
+        <h2 class="text-center pt-4" style="color : white; font-family: 'Dancing Script', cursive">Transfer Money</h2>
+        <br>
+            <div class="row">
+                <div class="col">
+                    <div class="table-responsive-sm">
+                    <table class="table table-hover table-sm table-striped table-condensed table-bordered" style="border-color:black;">
+                        <thead style="color : white;">
+                            <tr>
+                            <th scope="col" class="text-center py-2">Id</th>
+                            <th scope="col" class="text-center py-2">Name</th>
+                            <th scope="col" class="text-center py-2">E-Mail</th>
+                            <th scope="col" class="text-center py-2">Balance</th>
+                            <th scope="col" class="text-center py-2">Operation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                <?php 
+                    while($rows=mysqli_fetch_assoc($result)){
+                ?>
+                    <tr style="color : white;">
+                        <td class="py-2"><?php echo $rows['id'] ?></td>
+                        <td class="py-2"><?php echo $rows['name']?></td>
+                        <td class="py-2"><?php echo $rows['email']?></td>
+                        <td class="py-2"><?php echo $rows['balance']?></td>
+                        <td><a href="select_user_detail.php?id= <?php echo $rows['id'] ;?>"> <button type="button" class="btn" style="background-color : #EF7D79;">Transact</button></a></td> 
+                    </tr>
+                <?php
+                    }
+                ?>
+            
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+            </div> 
+         </div>
+      
+         <footer class="text-center mt-5 py-2">
+<p>&copy 2021. PROJECT BY <b>SHRI SANKAR</b> <br>THE SPARK BANK</p>
+</footer>
+         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script> 
+</body>
+</html>

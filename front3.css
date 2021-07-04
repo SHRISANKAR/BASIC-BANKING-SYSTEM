@@ -1,0 +1,148 @@
+/* CSS RESET */
+*{
+    margin: 0px;
+    padding: 0px;
+    /* background-color: black; */
+}
+body{
+    background-color: #212529;
+} 
+/* CSS VARIABLE */
+:root{
+    --navbar-height: 59px;
+
+}
+/*NAVIGATION BAR: LOGO AND IMAGE */
+#logo{
+    margin: 34px 45px;
+}
+#logo img{
+    margin: -18px -17px;
+    height:60px ;
+}
+#navbar::before{
+    content: "";
+    background-color: #212529;
+    position: absolute;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.89;
+    
+}
+/* NAVIGATION BAR */
+/*NAVIGATION BAR: List styling */
+#navbar{
+    display:flex;
+    align-items: center;
+    position: relative;
+    top: 0px;
+    transition:all 1s ease-in-out 1s ;
+    
+}
+
+#navbar ul{
+    display: flex;
+    position: absolute;
+    right: 34px;
+    top: 24px;
+    
+}
+
+#navbar ul li{
+
+list-style:none;
+font-size: 1.3rem;
+    
+}
+#navbar ul li a{
+    color: white;
+    display: block;
+    padding: 3px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-family: 'Baloo Bhaina 2', cursive;
+    
+}
+#navbar ul li a:hover{
+    color: #212529;
+    background-color: white;
+    display: block;
+    padding: 3px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+    transform:scale(1.2) ;
+    /* color: rgb(7, 6, 6); */
+    /* background-color: white; */
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    /* height: 610px; */
+    /* border-radius: px; */
+    transform:scale(1.1) ;
+    
+}
+
+/* HOME SECTION */
+#home{
+    display:flex;
+    flex-direction: column;
+    height: 350px;
+    padding: 54px 200px;
+    justify-content: center;
+    align-items: center;
+    
+}
+#home::before{
+    content: "";
+    background: url(image/create-3026190_1920.jpg)  no-repeat center center/cover;
+    position: absolute;
+    height: 62%;
+    top:0px;
+    left: 0px;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.78;
+    
+}
+#home h1{
+    color: white;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+}
+#home p{
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Baloo Bhaina 2', cursive;
+    
+
+}
+ /* UTILITY CLASS */
+ .primary{
+    font-size: 3.8rem;
+    padding: 21px;
+     justify-content: center;
+     align-items: center;
+     font-family: 'Dancing Script', cursive;
+     color: white;
+     position:relative;
+    }
+.secondary{
+    font-size:2.2rem;
+    padding: 9px 38px;
+    font-family: 'Baloo Bhaina 2', cursive;
+    
+
+    }
+
+
+
+
+footer{
+    background: black;
+    color: white;
+    padding: 0px 0px;
+    
+}
